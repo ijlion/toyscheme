@@ -1,0 +1,113 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           toyscheme
+version:        0.1.0.0
+homepage:       https://github.com/ijlion/toyscheme#readme
+bug-reports:    https://github.com/ijlion/toyscheme/issues
+author:         ijlion
+maintainer:     ijlion@pm.me
+license:        WTFPL
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/ijlion/toyscheme
+
+library
+  exposed-modules:
+      Cli
+      Eval
+      LispVal
+      Parser
+      Prim
+      Repl
+  other-modules:
+      Paths_toyscheme
+  autogen-modules:
+      Paths_toyscheme
+  hs-source-dirs:
+      src
+  default-extensions:
+      OverloadedStrings
+  build-depends:
+      HTTP
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , haskeline
+    , hspec
+    , mtl
+    , optparse-applicative
+    , parsec
+    , tasty
+    , tasty-golden
+    , text
+    , transformers
+  default-language: Haskell2010
+
+executable toyscheme-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_toyscheme
+  autogen-modules:
+      Paths_toyscheme
+  hs-source-dirs:
+      app
+  default-extensions:
+      OverloadedStrings
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HTTP
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , haskeline
+    , hspec
+    , mtl
+    , optparse-applicative
+    , parsec
+    , tasty
+    , tasty-golden
+    , text
+    , toyscheme
+    , transformers
+  default-language: Haskell2010
+
+test-suite toyscheme-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_toyscheme
+  autogen-modules:
+      Paths_toyscheme
+  hs-source-dirs:
+      test
+  default-extensions:
+      OverloadedStrings
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HTTP
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , haskeline
+    , hspec
+    , mtl
+    , optparse-applicative
+    , parsec
+    , tasty
+    , tasty-golden
+    , text
+    , toyscheme
+    , transformers
+  default-language: Haskell2010
